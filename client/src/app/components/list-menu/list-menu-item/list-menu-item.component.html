@@ -1,0 +1,8 @@
+<div *ngIf="data" class="listMenuItem">
+  <img
+    *ngIf="data.icon"
+    src="../../../../assets/icons/{{ data.icon }}"
+    alt="icon"
+  />
+  <p>{{ data.text }}</p>
+</div>

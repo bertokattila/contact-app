@@ -1,0 +1,73 @@
+button {
+  font-family: "Lexend Deca";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 0;
+  padding: 2px;
+  color: var(--text-100);
+  height: 40px;
+  border-radius: 8px;
+  gap: 8px;
+  padding: 8px 12px 8px 12px;
+}
+button.enhanced {
+  background: linear-gradient(to bottom, var(--grey-70) 0%, var(--grey-60) 100%)
+      padding-box,
+    linear-gradient(to top, var(--grey-60), var(--grey-20)) border-box;
+  border-radius: 1000px;
+  border: 1px solid transparent;
+}
+button.enhanced:hover {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04)
+    ),
+    linear-gradient(to bottom, var(--grey-70) 0%, var(--grey-60) 100%)
+      padding-box,
+    linear-gradient(to top, var(--grey-60), var(--grey-20)) border-box;
+}
+.icon {
+  padding: 8px;
+}
+
+.text {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.icon.text {
+  padding-right: 16px;
+}
+
+.primary {
+  background-color: var(--grey-60);
+}
+
+.primary:hover {
+  background-color: var(--grey-50);
+  cursor: pointer;
+}
+
+.primary:active {
+  background-color: var(--grey-40);
+}
+
+.secondary {
+  background-color: var(--grey-100);
+}
+
+.secondary:hover {
+  background-color: var(--grey-90);
+  cursor: pointer;
+}
+
+.secondary:active {
+  background-color: var(--grey-80);
+}
+
+.active,
+.active:hover {
+  background-color: var(--grey-80);
+}

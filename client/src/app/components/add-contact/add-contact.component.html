@@ -1,0 +1,36 @@
+<section class="modalWindowContainer" *ngIf="visible" (click)="this.onHide()">
+  <div (click)="preventHide($event)" class="modalWindow">
+    <div class="modalWindowForm">
+      <h2>Add contact</h2>
+      <div class="imageContainer">
+        <img
+          class="profileImg"
+          src="../../../assets/images/default_profile.svg"
+          alt="Profile picture"
+        />
+        <app-button [icon]="Icon.Add" text="Add picture"></app-button>
+        <div *ngIf="false">
+          <app-button [icon]="Icon.Change" text="Change picture"></app-button>
+          <app-button [icon]="Icon.Delete"></app-button>
+        </div>
+      </div>
+      <app-text-field label="Name" placeholder="Jamie Wright"></app-text-field>
+      <app-text-field
+        label="Phone number"
+        placeholder="+01 234 5678"
+      ></app-text-field>
+      <app-text-field
+        label="Email address"
+        placeholder="jamie.wright@mail.com"
+      ></app-text-field>
+    </div>
+    <div class="actionBtns">
+      <app-button text="Done"></app-button>
+      <app-button
+        (click)="this.onHide()"
+        [secondary]="true"
+        text="Cancel"
+      ></app-button>
+    </div>
+  </div>
+</section>

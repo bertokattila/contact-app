@@ -1,0 +1,14 @@
+<button
+  [ngClass]="this.secondary ? 'secondary' : 'primary'"
+  [ngClass]="{
+    text: this.text,
+    icon: this.icon,
+    secondary: this.secondary,
+    primary: !this.secondary,
+    enhanced: this.enhanced,
+    active: this.active
+  }"
+>
+  <img *ngIf="icon" src="../../../../assets/icons/{{ icon }}" alt="icon" />
+  {{ text ? this.text : "" }}
+</button>

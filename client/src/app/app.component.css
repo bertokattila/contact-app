@@ -1,0 +1,49 @@
+.text {
+  color: var(--piros);
+}
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 120px;
+}
+.sideCol {
+  width: 25vw;
+  height: 100px;
+  flex-shrink: 2;
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+}
+.leftCol {
+  flex-direction: row-reverse;
+  padding-right: 24px;
+}
+.rightCol {
+  padding-left: 24px;
+}
+.mainCol {
+  width: 50vw;
+  height: 100px;
+  min-width: 420px;
+  max-width: 1000px;
+  margin: 0px 24px;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.secondaryButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}

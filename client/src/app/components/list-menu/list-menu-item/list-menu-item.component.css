@@ -1,0 +1,19 @@
+.listMenuItem {
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+  background-color: var(--grey-80);
+  gap: 12px;
+  padding: 10px 10px;
+  align-items: center;
+}
+.listMenuItem:hover {
+  cursor: pointer;
+  background-color: var(--grey-70);
+}
+.listMenuItem:active {
+  background-color: var(--grey-60);
+}
+.listMenuItem img {
+  opacity: 52%;
+}

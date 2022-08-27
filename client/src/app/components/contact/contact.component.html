@@ -1,0 +1,28 @@
+<div
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+  class="contactItem"
+>
+  <div class="itemGroup personalInfo">
+    <img
+      class="profileImg"
+      src="../../../assets/images/default_profile.svg"
+      alt="Profile picture"
+    />
+    <div class="personalInfo">
+      <p class="name">{{ this.name }}</p>
+      <p class="phone message">{{ this.phone }}</p>
+    </div>
+  </div>
+  <div *ngIf="this.mouseover" class="itemGroup actions">
+    <app-button [icon]="Icon.Mute" [secondary]="true"></app-button>
+    <app-button [icon]="Icon.Call" [secondary]="true"></app-button>
+    <app-list-menu
+      [listMenuItems]="[
+        { text: 'Edit', icon: Icon.Settings, callBack: doSomething },
+        { text: 'Favourite', icon: Icon.Favourite, callBack: doSomething },
+        { text: 'Remove', icon: Icon.Delete, callBack: doSomething }
+      ]"
+    ></app-list-menu>
+  </div>
+</div>

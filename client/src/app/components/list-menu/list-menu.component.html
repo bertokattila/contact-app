@@ -1,0 +1,14 @@
+<app-button
+  (click)="this.onClick()"
+  [icon]="Icon.More"
+  [secondary]="true"
+  [active]="this.getShowList()"
+></app-button>
+<div *ngIf="this.getShowList()" class="listContainer">
+  <app-list-menu-item
+    *ngFor="let item of listMenuItems; let first = first; let last = last"
+    [data]="item"
+    (click)="item.callBack()"
+    [ngClass]="{ firstListMenuItem: first, lastListMenuItem: last }"
+  ></app-list-menu-item>
+</div>
