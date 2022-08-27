@@ -44,14 +44,17 @@
         <app-add-contact
           [visible]="this.getShowAddContactModal()"
           (hide)="this.setShowAddContactModal(false)"
+          (contact)="this.addContact($event)"
         ></app-add-contact>
       </div>
     </header>
-    <app-contact name="Timothy Lewis" phone="+36 01 234 5678"></app-contact>
-    <app-contact name="Timothy Lewis" phone="+36 01 234 5678"></app-contact>
-    <app-contact name="Timothy Lewis" phone="+36 01 234 5678"></app-contact>
-    <app-contact name="Timothy Lewis" phone="+36 01 234 5678"></app-contact>
-    <app-contact name="Timothy Lewis" phone="+36 01 234 5678"></app-contact>
+    <app-contact
+      *ngFor="let contact of contacts"
+      name="{{ contact.name }}"
+      phone="{{ contact.phone }}"
+      [profilePicture]="contact.image"
+      (removeContact)="this.contacts.splice(contacts.indexOf(contact), 1)"
+    ></app-contact>
   </section>
   <section class="sideCol rightCol">
     <app-button [icon]="Icon.LightMode" [secondary]="true"></app-button>

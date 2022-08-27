@@ -1,4 +1,9 @@
 <div class="textFieldContainer">
   <label class="message label">{{ this.label }}</label>
-  <input type="text" placeholder="{{ this.placeholder }}" />
+  <input
+    [(ngModel)]="this.value"
+    type="text"
+    placeholder="{{ this.placeholder }}"
+    (change)="onChange()"
+  />
 </div>

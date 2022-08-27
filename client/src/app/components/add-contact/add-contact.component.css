@@ -9,7 +9,7 @@
 }
 .modalWindow {
   background-color: var(--grey-100);
-  width: 364px;
+  width: 365px;
   height: fit-content;
   position: absolute;
   margin: auto;
@@ -32,6 +32,7 @@
   height: 88px;
   border: 1px solid var(--grey-70);
   border-radius: 50%;
+  object-fit: cover;
 }
 .imageContainer {
   display: flex;
@@ -44,4 +45,9 @@
   flex-direction: row-reverse;
   gap: 8px;
   padding: 24px;
+}
+.imageModBtns {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-text-field',
@@ -12,6 +12,14 @@ export class TextFieldComponent implements OnInit {
   @Input()
   label: string = 'Label';
 
+  @Input()
+  value: string = '';
+
+  @Output()
+  valueChange = new EventEmitter<string>();
+  onChange() {
+    this.valueChange.emit(this.value);
+  }
   constructor() {}
 
   ngOnInit(): void {}

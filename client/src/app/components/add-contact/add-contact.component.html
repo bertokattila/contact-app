@@ -1,35 +1,65 @@
-<section class="modalWindowContainer" *ngIf="visible" (click)="this.onHide()">
+<section class="modalWindowContainer" *ngIf="visible" (click)="this.onCancel()">
   <div (click)="preventHide($event)" class="modalWindow">
     <div class="modalWindowForm">
       <h2>Add contact</h2>
       <div class="imageContainer">
         <img
           class="profileImg"
-          src="../../../assets/images/default_profile.svg"
+          src="{{
+            this.imgFile
+              ? this.imgFile
+              : '../../../assets/images/default_profile.svg'
+          }}"
           alt="Profile picture"
         />
-        <app-button [icon]="Icon.Add" text="Add picture"></app-button>
-        <div *ngIf="false">
-          <app-button [icon]="Icon.Change" text="Change picture"></app-button>
-          <app-button [icon]="Icon.Delete"></app-button>
+        <input
+          (change)="onImageChange($event)"
+          hidden
+          #fileInput
+          type="file"
+          accept="image/*"
+        />
+        <app-button
+          *ngIf="!this.imgFile"
+          [icon]="Icon.Add"
+          text="Add picture"
+          (click)="fileInput.click()"
+        ></app-button>
+        <div class="imageModBtns" *ngIf="this.imgFile">
+          <app-button
+            [icon]="Icon.Change"
+            text="Change picture"
+            (click)="fileInput.click()"
+          ></app-button>
+          <app-button
+            [icon]="Icon.Delete"
+            (click)="onRemoveImage()"
+          ></app-button>
         </div>
       </div>
-      <app-text-field label="Name" placeholder="Jamie Wright"></app-text-field>
       <app-text-field
+        [(value)]="this.name"
+        label="Name"
+        placeholder="Jamie Wright"
+      >
+      </app-text-field>
+      <app-text-field
+        [(value)]="this.phone"
         label="Phone number"
         placeholder="+01 234 5678"
       ></app-text-field>
       <app-text-field
+        [(value)]="this.email"
         label="Email address"
         placeholder="jamie.wright@mail.com"
       ></app-text-field>
     </div>
     <div class="actionBtns">
-      <app-button text="Done"></app-button>
+      <app-button text="Done" (click)="onDone()"></app-button>
       <app-button
-        (click)="this.onHide()"
         [secondary]="true"
         text="Cancel"
+        (click)="this.onCancel()"
       ></app-button>
     </div>
   </div>

@@ -8,10 +8,19 @@ import { ListMenuComponent } from './components/list-menu/list-menu.component';
 import { ListMenuItemComponent } from './components/list-menu/list-menu-item/list-menu-item.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, TextFieldComponent, ListMenuComponent, ListMenuItemComponent, ContactComponent, AddContactComponent],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    ButtonComponent,
+    TextFieldComponent,
+    ListMenuComponent,
+    ListMenuItemComponent,
+    ContactComponent,
+    AddContactComponent,
+  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

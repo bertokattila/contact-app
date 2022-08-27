@@ -6,7 +6,11 @@
   <div class="itemGroup personalInfo">
     <img
       class="profileImg"
-      src="../../../assets/images/default_profile.svg"
+      src="{{
+        this.profilePicture
+          ? this.profilePicture
+          : '../../../assets/images/default_profile.svg'
+      }}"
       alt="Profile picture"
     />
     <div class="personalInfo">
@@ -21,7 +25,7 @@
       [listMenuItems]="[
         { text: 'Edit', icon: Icon.Settings, callBack: doSomething },
         { text: 'Favourite', icon: Icon.Favourite, callBack: doSomething },
-        { text: 'Remove', icon: Icon.Delete, callBack: doSomething }
+        { text: 'Remove', icon: Icon.Delete, callBack: onRemove }
       ]"
     ></app-list-menu>
   </div>

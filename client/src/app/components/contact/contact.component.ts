@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Icon } from 'src/utils/icon';
 
 @Component({
@@ -16,7 +16,17 @@ export class ContactComponent implements OnInit {
   @Input()
   phone: string = '';
 
-  constructor() {}
+  @Input()
+  profilePicture: string = undefined;
+
+  @Output()
+  removeContact = new EventEmitter();
+  @Output()
+  hide: EventEmitter<any> = new EventEmitter();
+
+  constructor() {
+    this.hide = new EventEmitter();
+  }
 
   ngOnInit(): void {}
   onMouseEnter() {
@@ -26,7 +36,13 @@ export class ContactComponent implements OnInit {
   onMouseLeave() {
     this.mouseover = false;
   }
+
   doSomething() {
     alert('ok');
+  }
+
+  onRemove() {
+    // /this.removeContact.emit();
+    console.log(this.hide);
   }
 }
