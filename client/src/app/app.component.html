@@ -22,45 +22,37 @@
 <app-text-field></app-text-field>
 <br />
  -->
-<header>
-  <div class="respRow">
-    <section class="sideCol leftCol">
-      <app-button [icon]="Icon.BackArrow" [secondary]="true"></app-button>
-    </section>
-    <div class="headerMain headerMainLeft">
-      <h1>Contacts</h1>
-      <div class="secondaryButtons">
-        <app-button [icon]="Icon.Settings" [secondary]="true"></app-button>
-        <img
-          class="loggedInProfilePic"
-          src="../assets/images/Timothy.png"
-          alt="Logged in user"
-        />
-      </div>
-    </div>
-  </div>
-  <div class="respRow">
-    <div class="headerMain headerMainRight">
-      <app-button
-        [enhanced]="true"
-        text="Add new"
-        [icon]="Icon.Add"
-        (click)="this.setShowAddContactModal(true)"
-      ></app-button>
-      <app-add-contact
-        [visible]="this.getShowAddContactModal()"
-        [contactToEdit]="this.contactToEdit"
-        (hide)="this.setShowAddContactModal(false)"
-        (contact)="this.addContact($event)"
-      ></app-add-contact>
-    </div>
-    <section class="sideCol rightCol">
-      <app-button [icon]="Icon.LightMode" [secondary]="true"></app-button>
-    </section>
-  </div>
-</header>
+
 <main class="mainContainer">
+  <section class="sideCol leftCol">
+    <app-button [icon]="Icon.BackArrow" [secondary]="true"></app-button>
+  </section>
   <section class="mainCol">
+    <header>
+      <h1>Contacts</h1>
+      <div class="buttons">
+        <div class="secondaryButtons">
+          <app-button [icon]="Icon.Settings" [secondary]="true"></app-button>
+          <img
+            class="loggedInProfilePic"
+            src="../assets/images/Timothy.png"
+            alt="Logged in user"
+          />
+        </div>
+        <app-button
+          [enhanced]="true"
+          text="Add new"
+          [icon]="Icon.Add"
+          (click)="this.setShowAddContactModal(true)"
+        ></app-button>
+        <app-add-contact
+          [visible]="this.getShowAddContactModal()"
+          [contactToEdit]="this.contactToEdit"
+          (hide)="this.setShowAddContactModal(false)"
+          (contact)="this.addContact($event)"
+        ></app-add-contact>
+      </div>
+    </header>
     <app-contact
       *ngFor="let contact of contacts | keyvalue"
       name="{{ contact.value.name }}"
@@ -69,5 +61,8 @@
       (removeContact)="this.removeContact(contact.value.id)"
       (editContact)="this.editContact(contact.value.id)"
     ></app-contact>
+  </section>
+  <section class="sideCol rightCol">
+    <app-button [icon]="Icon.LightMode" [secondary]="true"></app-button>
   </section>
 </main>

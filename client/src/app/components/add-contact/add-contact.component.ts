@@ -34,11 +34,24 @@ export class AddContactComponent implements OnInit {
   @Output()
   contact = new EventEmitter<Contact>();
 
+  shake: boolean = false;
+
   onCancel() {
     this.hide.emit();
   }
 
   onDone() {
+    if (
+      this.contactToEdit.name.length <= 0 ||
+      this.contactToEdit.phone.length <= 0 ||
+      this.contactToEdit.email.length <= 0
+    ) {
+      setTimeout(() => {
+        this.shake = false;
+      }, 300);
+      return;
+    }
+
     const contactDto = new ContactDto(
       this.contactToEdit.name,
       this.contactToEdit.phone,

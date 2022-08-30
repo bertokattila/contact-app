@@ -5,17 +5,19 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+  margin-top: 120px;
 }
 .sideCol {
+  width: 25vw;
   height: 100px;
   flex-shrink: 2;
+  flex-grow: 2;
   display: flex;
   align-items: center;
 }
 .leftCol {
   flex-direction: row-reverse;
-  width: 25vw;
+  padding-right: 24px;
 }
 .rightCol {
   padding-left: 24px;
@@ -23,7 +25,8 @@
 .mainCol {
   width: 50vw;
   height: 100px;
-  min-width: 420px;
+  min-width: min(400px, 100% - 80px);
+  max-width: min(1000px);
   margin: 0px 24px;
   display: flex;
   flex-direction: column;
@@ -32,50 +35,37 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-flow: row wrap;
-  margin-top: 120px;
-}
-header > * {
-  flex: 1;
+  justify-content: space-between;
 }
 .buttons {
   display: flex;
   flex-direction: row;
   gap: 24px;
+  align-items: center;
 }
 .secondaryButtons {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  padding-right: 8px;
+  align-items: center;
 }
 .loggedInProfilePic {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 1.5px solid white;
-  align-self: center;
 }
-.respRow {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.headerMain {
-  display: flex;
-  align-items: center;
-}
-.headerMainLeft {
-  width: calc(50vw - 121.733px);
-  justify-content: space-between;
-}
-.headerMainRight {
-  flex-direction: row-reverse;
-  max-width: fit-content;
-}
-@media only screen and (max-width: 768px) {
-  .respRow {
-    flex-basis: 100vw;
-    align-items: flex-start;
+@media only screen and (max-width: 1000px) {
+  header {
+    flex-direction: column;
+  }
+  .mainCol {
+    margin: 0;
+  }
+  .leftCol {
+    padding: 0;
+  }
+  .rightCol {
+    padding: 0;
   }
 }
