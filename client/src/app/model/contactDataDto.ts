@@ -1,9 +1,8 @@
-export class Contact {
+export class ContactDataDto {
   constructor(
     public id: number,
     public name: string,
     public phone: string,
-    public email: string,
-    public image: string
+    public email: string
   ) {}
 }

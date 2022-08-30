@@ -21,12 +21,9 @@ export class ContactComponent implements OnInit {
 
   @Output()
   removeContact = new EventEmitter();
-  @Output()
-  hide: EventEmitter<any> = new EventEmitter();
 
-  constructor() {
-    this.hide = new EventEmitter();
-  }
+  @Output()
+  editContact = new EventEmitter();
 
   ngOnInit(): void {}
   onMouseEnter() {
@@ -41,8 +38,11 @@ export class ContactComponent implements OnInit {
     alert('ok');
   }
 
-  onRemove() {
-    // /this.removeContact.emit();
-    console.log(this.hide);
-  }
+  onRemove = (): void => {
+    this.removeContact.emit();
+  };
+
+  onEdit = (): void => {
+    this.editContact.emit();
+  };
 }

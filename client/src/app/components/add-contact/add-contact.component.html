@@ -6,8 +6,8 @@
         <img
           class="profileImg"
           src="{{
-            this.imgFile
-              ? this.imgFile
+            this.contactToEdit.image
+              ? this.contactToEdit.image
               : '../../../assets/images/default_profile.svg'
           }}"
           alt="Profile picture"
@@ -20,12 +20,12 @@
           accept="image/*"
         />
         <app-button
-          *ngIf="!this.imgFile"
+          *ngIf="!this.contactToEdit.image"
           [icon]="Icon.Add"
           text="Add picture"
           (click)="fileInput.click()"
         ></app-button>
-        <div class="imageModBtns" *ngIf="this.imgFile">
+        <div class="imageModBtns" *ngIf="this.contactToEdit.image">
           <app-button
             [icon]="Icon.Change"
             text="Change picture"
@@ -38,18 +38,18 @@
         </div>
       </div>
       <app-text-field
-        [(value)]="this.name"
+        [(value)]="this.contactToEdit.name"
         label="Name"
         placeholder="Jamie Wright"
       >
       </app-text-field>
       <app-text-field
-        [(value)]="this.phone"
+        [(value)]="this.contactToEdit.phone"
         label="Phone number"
         placeholder="+01 234 5678"
       ></app-text-field>
       <app-text-field
-        [(value)]="this.email"
+        [(value)]="this.contactToEdit.email"
         label="Email address"
         placeholder="jamie.wright@mail.com"
       ></app-text-field>
