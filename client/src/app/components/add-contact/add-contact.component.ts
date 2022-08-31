@@ -37,6 +37,7 @@ export class AddContactComponent implements OnInit {
   shake: boolean = false;
 
   onCancel() {
+    this.clear();
     this.hide.emit();
   }
 
@@ -46,9 +47,6 @@ export class AddContactComponent implements OnInit {
       this.contactToEdit.phone.length <= 0 ||
       this.contactToEdit.email.length <= 0
     ) {
-      setTimeout(() => {
-        this.shake = false;
-      }, 300);
       return;
     }
 

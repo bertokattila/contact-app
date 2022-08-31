@@ -6,8 +6,6 @@ import hu.bertokattila.contactapp.dto.ProfilePictureDto;
 import hu.bertokattila.contactapp.dto.ResourceDto;
 import hu.bertokattila.contactapp.model.Contact;
 import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -111,5 +109,4 @@ public class ContactController {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
-
 }

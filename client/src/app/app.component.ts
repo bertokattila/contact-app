@@ -21,6 +21,9 @@ export class AppComponent {
   contactToEdit: Contact = new Contact(-1, '', '', '', undefined);
 
   setShowAddContactModal(val: boolean) {
+    if (val === false) {
+      this.contactToEdit = new Contact(-1, '', '', '', undefined);
+    }
     this.showAddContactModal = val;
   }
 
@@ -39,8 +42,8 @@ export class AppComponent {
   }
 
   editContact(id: number) {
-    this.setShowAddContactModal(true);
     this.contactToEdit = this.contacts[id.toString()];
+    this.setShowAddContactModal(true);
   }
 
   ngOnInit(): void {

@@ -1,7 +1,6 @@
 package hu.bertokattila.contactapp.model;
 
 import hu.bertokattila.contactapp.dto.ContactDto;
-import java.util.Base64;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,8 +42,6 @@ public class Contact {
     this.phone = dto.getPhone();
   }
 
-
   public Contact() {
-
   }
 }
