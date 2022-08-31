@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit {
   }
 
   doSomething() {
-    alert('ok');
+    alert('Not implemented');
   }
 
   onRemove = (): void => {

@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-text-field',
@@ -22,9 +15,6 @@ export class TextFieldComponent implements OnInit {
   @Input()
   value: string = '';
 
-  @Input()
-  shake: boolean = false;
-
   @Output()
   valueChange = new EventEmitter<string>();
   onChange() {
@@ -33,9 +23,4 @@ export class TextFieldComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.shake) {
-      console.log(changes.shake.currentValue);
-    }
-  }
 }
